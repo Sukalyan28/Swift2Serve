@@ -180,8 +180,8 @@ const getAllWorkerController = async (req, res) => {
 const bookAppointmnetController = async (req, res) => {
   try {
     console.log(req)
-    req.body.date = moment(req.body.date, "DD-MM-YYYY").toISOString();
-    req.body.time = moment(req.body.time, "HH:mm").toISOString();
+   // req.body.date = moment(req.body.date, "DD-MM-YYYY").toISOString();
+   // req.body.time = moment(req.body.time, "HH:mm").toISOString();
     req.body.status = "pending";
     const newAppointment = new bookingModel(req.body);
     await newAppointment.save();

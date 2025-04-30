@@ -3,7 +3,6 @@ import Layout from "../components/Layout";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { DatePicker, message, TimePicker } from "antd";
-import moment from "moment";
 import { useDispatch, useSelector } from "react-redux";
 import { showLoading, hideLoading } from "../redux/features/alertSlice";
 
@@ -11,8 +10,8 @@ const BookingPage = () => {
   const { user } = useSelector(state => state.user);
   const params = useParams();
   const [workers, SetWorkers] = useState([]);
-  const [date, setDate] = useState(null);
-  const [time, setTime] = useState(null);
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
   const [isAvailable, setIsAvailable] = useState(false);
   const dispatch = useDispatch();
   // login user data
@@ -119,20 +118,22 @@ const BookingPage = () => {
               Specialization: {workers.speciality}
             </h4>
             <div className=" flex flex-col w-50">
-            <DatePicker
-              className="m-2"
-              format="DD-MM-YYYY"
-              value={date ? moment(date, "DD-MM-YYYY") : null}
-              onChange={value => {
-                console.log("DatePicker onChange", value);
-              setDate(value ? moment(value).format("DD-MM-YYYY") : null);
+            <input
+              type="date"
+              className="m-2 px-2 py-1 border-2 rounded-sm cursor-pointer"
+              name="date"
+              value={date}
+              onChange={event => {
+                
+              setDate(event.target.value);
               }}
              />
-              <TimePicker
-                format="HH:mm"
-                className="m-2"
-                onChange={value => {
-                  setTime(moment(value).format("HH:mm"));
+              <input
+                type="time"
+                value={time}
+                className="m-2 px-2 py-1 border-2 rounded-sm"
+                onChange={event => {
+                  setTime(event.target.value);
                 }}
               />
               <button

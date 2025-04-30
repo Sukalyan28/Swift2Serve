@@ -16,7 +16,9 @@ const WorkerAppointments = () => {
           Authorization: `Bearer ${localStorage.getItem("token")}`
         }
       });
+      console.log(res)
       if (res.data.success) {
+        
         setAppointments(res.data.data);
       }
     } catch (error) {
@@ -59,8 +61,8 @@ const WorkerAppointments = () => {
       dataIndex: "date",
       render: (text, record) =>
         <span>
-          {moment(record.date).format("DD-MM-YYYY")} &nbsp;
-          {moment(record.time).format("HH:mm")}
+          {record.date} &nbsp;
+          {record.time}
         </span>
     },
     {
@@ -92,7 +94,7 @@ const WorkerAppointments = () => {
   ];
   return (
     <Layout>
-      <h1>Appointment List</h1>
+      <h1 className=" font-semibold py-3 text-xl">Appointment List</h1>
       <Table columns={columns} dataSource={appointments} />
     </Layout>
   );

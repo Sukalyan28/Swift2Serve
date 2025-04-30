@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Layout from "./../components/Layout";
-import moment from "moment";
 import { Table } from "antd";
 
 const Appointments = () => {
@@ -50,8 +49,8 @@ const Appointments = () => {
       dataIndex: "date",
       render: (text, record) => (
         <span>
-          {moment(record.date).format("DD-MM-YYYY")} &nbsp;
-          {moment(record.time).format("HH:mm")}
+          {record.date} &nbsp;
+          {record.time}
         </span>
       ),
     },

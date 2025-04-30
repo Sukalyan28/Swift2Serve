@@ -55,7 +55,7 @@ const Users = () => {
 
   return (
     <Layout>
-      <h1 className="text-center m-2">Users List</h1>
+      <h1 className="text-center m-2 font-semibold py-3 text-xl">Users List</h1>
       <Table columns={columns} dataSource={users} />
     </Layout>
   );

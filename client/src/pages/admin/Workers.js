@@ -61,7 +61,7 @@ const Workers = () => {
       dataIndex: "status"
     },
     {
-      title: "phone",
+      title: "Phone",
       dataIndex: "phone"
     },
     {
@@ -88,7 +88,7 @@ const Workers = () => {
 
   return (
     <Layout>
-      <h1 className="text-center m-3">All Workers</h1>
+      <h1 className="text-center m-3 text-xl font-semibold py-3">All Workers</h1>
       <Table columns={columns} dataSource={workers} />
     </Layout>
   );

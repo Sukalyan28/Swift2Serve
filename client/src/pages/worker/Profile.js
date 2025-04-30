@@ -74,7 +74,7 @@ const Profile = () => {
   }, []);
   return (
     <Layout>
-      <h1>Manage Profile</h1>
+      <h1 className=" font-semibold py-3 text-xl px-3">Manage Profile</h1>
       {worker &&
         <Form
           layout="vertical"
@@ -88,7 +88,7 @@ const Profile = () => {
           }}
           onFinish={handleFinish}
         >
-          <h4 className="">Personal Details : </h4>
+          <h4 className=" font-semibold text-lg">Personal Details : </h4>
           <Row gutter={20}>
             <Col xs={24} md={24} lg={8}>
               <Form.Item
@@ -146,7 +146,7 @@ const Profile = () => {
               </Form.Item>
             </Col>
           </Row>
-          <h4>Professional Details :</h4>
+          <h4 className=" font-semibold text-lg">Professional Details :</h4>
           <Row gutter={20}>
           
             
